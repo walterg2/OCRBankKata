@@ -1,6 +1,3 @@
 *.*~
 .gradle
-build/
-build/classes
-build/resources
-build/test-results
+build/**
