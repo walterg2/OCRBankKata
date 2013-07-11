@@ -1,7 +1,5 @@
 package com.walterg2.katas.ocrbank
 
-import com.walterg2.katas.ocrbank.Digit
-
 class DigitReader {
 
   static def DIGITS = [
