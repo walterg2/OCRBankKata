@@ -6,7 +6,7 @@ import com.walterg2.katas.ocrbank.DigitReader
 
 class DigitReaderSpecification extends Specification {
   @Unroll("Can read a #digit")
-  def "reader can read a number from 0 to 1"() {
+  def "reader can read a number from 0 to 9"() {
     given:
       def reader = new DigitReader()
     when:
@@ -15,8 +15,16 @@ class DigitReaderSpecification extends Specification {
       result == digit
     where:
       digitText << [Digit.ZERO,
-                    Digit.ONE]
-      digit << (0..1).collect { it.toString() }
+                    Digit.ONE,
+                    Digit.TWO,
+                    Digit.THREE,
+                    Digit.FOUR,
+                    Digit.FIVE,
+                    Digit.SIX,
+                    Digit.SEVEN,
+                    Digit.EIGHT,
+                    Digit.NINE]
+      digit << (0..9).collect { it.toString() }
   }
 
 
