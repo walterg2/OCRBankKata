@@ -5,23 +5,19 @@ import com.walterg2.katas.ocrbank.Digit
 import com.walterg2.katas.ocrbank.DigitReader
 
 class DigitReaderSpecification extends Specification {
-  
-  def "reader can read a 0"() {
+  @Unroll("Can read a #digit")
+  def "reader can read a number from 0 to 1"() {
     given:
       def reader = new DigitReader()
     when:
-      def result = reader.read(Digit.ZERO)
+      def result = reader.read(digitText)
     then:
-      result == '0'
+      result == digit
+    where:
+      digitText << [Digit.ZERO,
+                    Digit.ONE]
+      digit << (0..1).collect { it.toString() }
   }
 
-  def "reader can read a 1"() {
-    given:
-      def reader = new DigitReader()
-    when:
-      def result = reader.read(Digit.ONE)
-    then:
-      result == '1'
-  }
-  
+
 }
