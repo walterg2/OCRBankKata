@@ -14,4 +14,14 @@ class DigitReaderSpecification extends Specification {
     then:
       result == '0'
   }
+
+  def "reader can read a 1"() {
+    given:
+      def reader = new DigitReader()
+    when:
+      def result = reader.read(Digit.ONE)
+    then:
+      result == '1'
+  }
+  
 }
