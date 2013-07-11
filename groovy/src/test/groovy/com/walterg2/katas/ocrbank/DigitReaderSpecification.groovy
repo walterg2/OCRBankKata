@@ -1,26 +1,17 @@
 package com.walterg2.katas.ocrbank
 
 import spock.lang.*
+import com.walterg2.katas.ocrbank.Digit
+import com.walterg2.katas.ocrbank.DigitReader
 
 class DigitReaderSpecification extends Specification {
   
-  @Unroll("Can read a #digit")
-  def "reader can read a digit from 0-9"() {
+  def "reader can read a 0"() {
+    given:
+      def reader = new DigitReader()
     when:
-      def result = reader.read(digitText)
+      def result = reader.read(Digit.ZERO)
     then:
-      result == digit
-    where:
-      digitText << [Digit.ZERO, 
-                    Digit.ONE,
-                    Digit.TWO,
-                    Digit.THREE,
-                    Digit.FOUR,
-                    Digit.FIVE,
-                    Digit.SIX,
-                    Digit.SEVEN,
-                    Digit.EIGHT,
-                    Digit.NINE]
-      digit << [0..9].collect { it.toString() }
+      result == '0'
   }
 }
