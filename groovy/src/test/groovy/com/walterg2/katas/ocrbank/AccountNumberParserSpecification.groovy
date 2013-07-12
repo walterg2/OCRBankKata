@@ -14,17 +14,18 @@ class AccountNumberParserSpecification extends Specification {
       def file = new File("${fileLocation}/${accountNumber}.txt")
       def result = parser.read(file.readLines())
     then: "I see the account number represented as digits"
-      println "Result: ${result} == AccountNumber: ${accountNumber}"
       result == accountNumber
     where:
       accountNumber << [
+        '000000051',
         '111111111',
         '123456789',
         '127538461',
-        '732589640',
-        '999999999',
+        '200000000',
+        '333333333',
         '490867715',
-        '000000051'
+        '732589640',
+        '999999999'
       ]
   }
 
