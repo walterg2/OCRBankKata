@@ -22,7 +22,9 @@ class AccountNumberParserSpecification extends Specification {
         '123456789',
         '127538461',
         '732589640',
-        '999999999'
+        '999999999',
+        '490867715',
+        '000000051'
       ]
   }
 
